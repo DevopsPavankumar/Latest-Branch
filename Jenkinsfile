@@ -7,12 +7,7 @@ node{
         sh 'mvn clean install'
     }
     stage('creating image from output'){
-        sh 'docker build -t pavankumarmalli/jenkins_cicd:new .'
+        sh 'docker build -t jenkins/jenkins .'
     }
-    stage('pushing image to docker hub'){
-       withCredentials([string(credentialsId: 'dockerwd', variable: 'dockerhubcredentials')]) {
-        sh "docker login -u pavankumarmalli -p ${dockerhubcredentials}"
-    }
-       sh 'docker push pavankumarmalli/jenkins_cicd:new'
-    }
+    
 }
