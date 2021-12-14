@@ -7,7 +7,7 @@ node{
         sh 'mvn clean install'
     }
     stage('creating image from output'){
-        sh 'docker run -itd -p 9000:9000 jenkins/jenkins .'
+        sh 'docker run -itd -p 9000:9000 jenkins/jenkins'
     }
     
 }
