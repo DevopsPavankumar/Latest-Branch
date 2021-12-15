@@ -6,8 +6,10 @@ node{
     stage('build the code using maven'){
         sh 'mvn clean install'
     }
-    stage('Running Docker container'){
-        sh 'docker run -itd --name JenkinsThree -p 9999:9999 jenkins/jenkins'
+
+    stage('running docker container'){
+        sh 'docker run -itd --name JenkinsTwo -p 9050:9050 jenkins/jenkins'
+
     }
     
 }
