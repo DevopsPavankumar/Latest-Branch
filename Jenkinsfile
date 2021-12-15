@@ -6,7 +6,7 @@ node{
     stage('build the code using maven'){
         sh 'mvn clean install'
     }
-    stage('creating image from output'){
+    stage('Running the dokcer container'){
         sh 'docker run -itd -p 9999:9999 jenkins/jenkins'
     }
     
