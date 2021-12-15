@@ -9,6 +9,7 @@ node{
 
     stage('running docker container'){
         sh 'docker run -itd --name JenkinsTwo -p 9050:9050 jenkins/jenkins'
+
     }
     
 }
