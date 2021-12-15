@@ -6,6 +6,7 @@ node{
     stage('build the code using maven'){
         sh 'mvn clean install'
     }
+
     stage('running docker container'){
         sh 'docker run -itd --name JenkinsTwo -p 9050:9050 jenkins/jenkins'
     }
