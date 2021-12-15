@@ -6,8 +6,8 @@ node{
     stage('build the code using maven'){
         sh 'mvn clean install'
     }
-    stage('creating image from output'){
-        sh 'docker run -itd -p 9999:9999 jenkins/jenkins'
+    stage('Running Docker container'){
+        sh 'docker run -itd --name JenkinsThree -p 9999:9999 jenkins/jenkins'
     }
     
 }
