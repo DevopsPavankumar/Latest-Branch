@@ -6,9 +6,11 @@ node{
     stage('build the code using maven'){
         sh 'mvn clean install'
     }
+    stage('Pulling the image from docker hub'){
+        sh 'sudo docker pull nginx' 
 
     stage('running docker container'){
-        sh 'docker run -itd --name Nginxwebserver -p 9000:80 nginx'
+        sh 'docker run -itd --name Nginxweb -p 8000:80 nginx'
 
     }
     
