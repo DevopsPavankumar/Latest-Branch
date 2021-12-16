@@ -11,6 +11,6 @@ node{
         sh 'sudo docker pull nginx' 
     }
     stage('running docker container'){
-        sh 'docker run -itd --name Nginxweb -p 8000:80 nginx'
+        sh 'docker run -itd --name Nginxweb -p 8090:80 nginx'
     }
 }
