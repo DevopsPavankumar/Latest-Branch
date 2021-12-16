@@ -12,7 +12,7 @@ node{
 
     stage('running docker container'){
 
-        sh 'docker run -itd --name Jenkins -p 9050:9050 jenkins/jenkins'
+        sh 'docker run -itd --name Jenkinspipeline -p 9060:9060 jenkins/jenkins'
 
     }
     
