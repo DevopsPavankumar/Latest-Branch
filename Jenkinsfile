@@ -6,10 +6,11 @@ node{
     stage('build the code using maven'){
         sh 'sudo mvn clean install'
     }
-    stage('pull the image from docker hub'){
-        sh 'sudo docker pull jenkins/jenkins'
+
+    stage('Pulling the image from docker hub'){
+        sh 'sudo docker pull nginx' 
     }
-    stage('run the docker container'){
-       sh 'sudo docker run -itd --name Jenkinspipeline -p 9060:9060 jenkins/jenkins'
+    stage('running docker container'){
+        sh 'docker run -itd --name Nginxweb -p 8000:80 nginx'
     }
 }
