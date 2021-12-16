@@ -8,12 +8,12 @@ node{
     }
 
     stage('Pulling the image from docker hub'){
-        sh 'sudo docker pull jenkins/jenkins' 
+        sh 'sudo docker pull nginx' 
     }
     stage('running docker container'){
 
 
-        sh 'docker run -itd --name Jenkinspipeline -p 9060:9060 jenkins/jenkins'
+        sh 'docker run -itd --name nginxweb -p 8888:80 nginx'
 
     }
 }
