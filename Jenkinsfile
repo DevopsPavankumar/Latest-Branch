@@ -1,17 +1,16 @@
 node{
-    stage('i am pulling code from github'){
-        git credentialsId: 'd1bba3c0-a041-495f-9837-db4600aa15bb', url: 'https://github.com/DevopsPavankumar/Latest-Branch.git'
+    stage('pulling code from github'){
+        
+        git credentialsId: '8602e083-e32e-4ce1-a44c-071cd5b06c88', url: 'https://github.com/DevopsPavankumar/Latest-Branch.git'
     }
-    
     stage('build the code using maven'){
-        sh 'mvn clean install'
+        sh 'sudo mvn clean install'
     }
+
     stage('Pulling the image from docker hub'){
         sh 'sudo docker pull nginx' 
-
+    }
     stage('running docker container'){
         sh 'docker run -itd --name Nginxweb -p 8000:80 nginx'
-
     }
-    
 }
