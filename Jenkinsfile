@@ -6,6 +6,9 @@ node{
     stage('build the code using maven'){
         sh 'mvn clean install'
     }
+    stage('pulling image from docker hub'){
+        sh 'sudo docker pull jenkins/jenkins'
+    }
 
     stage('running docker container'){
 
