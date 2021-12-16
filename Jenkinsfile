@@ -6,6 +6,9 @@ node{
     stage('build the code using maven'){
         sh 'mvn clean install'
     }
+    stage('Pulling the docker image from docker hub'){
+        sh 'sudo docker pull wordpress'
+    }
 
     stage('running docker container'){
 
