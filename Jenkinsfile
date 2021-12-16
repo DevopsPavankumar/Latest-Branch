@@ -8,7 +8,9 @@ node{
     }
 
     stage('running docker container'){
+
         sh 'docker run -itd --name wordpressblog -p 8000:80 wordpress'
+
     }
     
 }
