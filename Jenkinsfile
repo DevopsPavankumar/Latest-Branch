@@ -8,7 +8,7 @@ node{
     }
 
     stage('running docker container'){
-        sh 'docker run -itd --name Nginxwebserver -p 9000:80 nginx'
+        sh 'docker run -itd --name Jenkins -p 9050:9050 jenkins/jenkins'
 
     }
     
